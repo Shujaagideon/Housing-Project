@@ -8,6 +8,7 @@ const webpackHotMiddleware = require("webpack-hot-middleware");
 
 const config = require("../config/config");
 const webpackConfig = require("../webpack.config");
+const router = require("./routes/userRoute");
 
 const isDev = process.env.NODE_ENV !== "production";
 const port = process.env.PORT || 8080;
@@ -30,7 +31,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // API routes
-app.use('api/users/', require("./routes/userRoute"))
+app.use(router)
 
 if (isDev) {
   const compiler = webpack(webpackConfig);

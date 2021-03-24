@@ -1,7 +1,8 @@
+import { motion } from 'framer-motion'
 import styled, {css} from 'styled-components'
 
 
-export const LogWrapper = styled.div `
+export const LogWrapper = styled(motion.div) `
     height: 30em;
     width: 80%;
     border-radius: 10px;
@@ -12,10 +13,9 @@ export const LogWrapper = styled.div `
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 50px;
     justify-content: ${props=> props.login ? 'space-around': ''};
 `
-export const Form = styled.form `
+export const Form = styled(motion.form) `
     height: ${props=> props.login ? 40 : 80}%;
     width: 60%;
     display: flex;

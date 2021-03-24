@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Head = styled.div `
     position: fixed;
@@ -6,7 +6,7 @@ export const Head = styled.div `
     top: 0;
     height: 100%;
     width: 6%;
-    background-color: white;
+    background-color: ${props=> props.theme.headerBg};
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -20,7 +20,7 @@ export const Head = styled.div `
         width: 60%;
     }
     a{
-        color: #5f9ea0;
+        color: ${props=>props.theme.headLine};
         font-size: 25px;
         font-weight: 800;
         text-decoration: none;
@@ -36,4 +36,7 @@ export const LogBtns = styled.div `
     display: flex;
     justify-content: space-around;
     align-items: center;
+    ${props=>props.center && css`
+        justify-content: center;
+    `}
 `

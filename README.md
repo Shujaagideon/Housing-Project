@@ -31,3 +31,5 @@ Server-
 5. Create a state management system with react-reducers.
 6. Enable dynamic collection of data from the database by the front-end.
 7. Finish up the UI pages and enable interactivity.
+
+

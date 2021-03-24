@@ -21,11 +21,10 @@ router.get("/auth", auth, (req, res) => {
     name: req.user.name,
     lastname: req.user.lastname,
     role: req.user.role,
-    image: req.user.image,
   });
 });
 
-router.post("/register", (req, res) => {
+router.post("/signup", (req, res) => {
 
   const user = new User(req.body);
 
@@ -65,7 +64,9 @@ router.post("/login", (req, res) => {
           .status(200)
           .json({
             loginSuccess: true,
-            userId: user._id
+            userId: user._id,
+            firstName: user.firstname,
+            lastName: user.lastname,
           });
       });
     });

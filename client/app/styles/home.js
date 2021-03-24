@@ -1,7 +1,8 @@
+import { motion } from 'framer-motion'
 import styled, {css} from 'styled-components'
 
 
-export const Advert = styled.div`
+export const Advert = styled(motion.div)`
   height: 10em;
   background-color: #697184;
   width: 100%;
@@ -33,7 +34,7 @@ export const Advert = styled.div`
         padding-right: 2px;
     }
 `
-export const Filters = styled.div`
+export const Filters = styled(motion.div)`
     height: 4em;
     width: 100%;
     display: flex;
@@ -42,7 +43,7 @@ export const Filters = styled.div`
     border-radius: 10px;
     margin-top: 30px;
     margin-bottom: 30px;
-    color: #5f9ea0;
+    color: ${props=>props.theme.headLine};
     & .icon-basic-mixer2{
         margin-right: 10px;
     }
@@ -71,7 +72,7 @@ export const Filters = styled.div`
         }
     }
 `
-export const Cards = styled.div`
+export const Cards = styled(motion.div)`
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -85,7 +86,7 @@ export const Cards = styled.div`
         display: flex;
         flex-direction: column;
         align-items: center;
-        box-shadow: 1px 1px 22px #b1a6a4, -1px 1px 22px #b1a6a4;
+        box-shadow:${props=>props.theme.boxShadow};
         cursor: pointer;
 
         & .image{
